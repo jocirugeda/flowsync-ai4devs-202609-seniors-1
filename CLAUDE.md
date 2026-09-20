@@ -121,3 +121,14 @@ ESLint here. There is no Prettier config on the frontend; backend formatting com
   `start/env.ts` validates them at boot. CORS allows all origins in dev only (`config/cors.ts`).
 - The API is versioned at `/api/v1` and the frontend dev server runs on `:5173`, so browser calls to
   `:3333` are cross-origin — keep that in mind when wiring auth headers.
+
+
+## Reglas de proceso
+- Antes de tocar código: crear una rama nueva (`git checkout -b feat/<slug>`). Nunca
+commitear directo en `main`/`s1/start`.
+- Al cerrar la tarea: usar la skill `/commit`, luego `gh pr create` con una descripción
+completa de los cambios en el cuerpo del PR.
+- Después de abrir el PR: usar el subagente `adversarial-reviewer` sobre él, antes de
+darlo por terminado.
+- No repitas ese resumen en el chat: la sesión se va a perder, el PR no. Responde solo con la URL del PR
+
